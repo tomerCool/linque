@@ -9,12 +9,26 @@
     <title>Document</title>
     <noscript>Zoinks! Looks like JavaScript is blocked</noscript>
 
+    <!-- IMPORTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
     <!-- STYLESHEETS -->
     <link href="stylesheets/dist/base.css" rel="stylesheet">
     <link href="stylesheets/dist/homePage.css" rel="stylesheet">
 </head>
 <body>
-    <div id="rightContainer" class="halfPageContainer"></div>
-    <div id="leftContainer" class="halfPageContainer"></div>
+    <div id="leftContainer" class="halfPageContainer">
+        <div id="backgroundEffect"></div>
+        <h1>The Best of the internet,<br />Curated by your friends.</h1>
+    </div>
+    <div id="rightContainer" class="halfPageContainer">
+        <div id="authContainer">
+            <a href=""><div class="button">Login with Google</div></a>
+            <a href=""><div class="button">Login with Twitter</div></a>
+            <a href=""><div class="button">Login with Email</div></a>
+            <div class="divider"></div>
+            <a href=""><div class="button outlineButton">Create an Account</div></a>
+        </div>
+    </div>
 </body>
 </html>

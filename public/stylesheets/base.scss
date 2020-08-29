@@ -2,13 +2,66 @@
 
 $text-color: #FFFCF2;
 $text-dark-color: #CCC5B9;
-$main-color: #EB5E28;
-$main-light-color: #EE7444;
-$bg-color: #403D39;
-$bg-dark-color: #252422;
+// $main-color: #EB5E28;
+// $main-light-color: #EE7444;
+$main-color: #ea638c;
+$main-light-color: #b33c86;
+$bg-color: #190e4f;
+$bg-dark-color: #03012c;
+
+//// FONTS ////
+$text-font: 'Roboto', 'Helvetica', 'Arial';
+$title-font: 'Roboto', 'Helvetica', 'Arial';
 
 html, body {
 	height: 100%;
 	padding: 0px;
 	margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $text-color;
+	font-family: $title-font;
+}
+
+p {
+	color: $text-color;
+	font-family: $text-font;
+}
+
+$buttonVerticalMargin: 20px;
+
+.divider {
+	width: 100%;
+	height: 0;
+	margin: $buttonVerticalMargin 0 $buttonVerticalMargin 0;
+	border-bottom: 1px solid $main-color;
+}
+
+.button {
+	$height: 50px;
+	width: 100%;
+	height: $height;
+	background-color: $main-color;
+	margin-bottom: $buttonVerticalMargin;
+
+	text-align: center;
+	line-height: $height;
+	color: $text-color;
+	font-family: $text-font;
+	font-weight: 600;
+	font-size: 25px;
+
+	transition-duration: .3s;
+	user-select: none;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+}
+
+.outlineButton {
+	border: 1px solid $main-color !important;
+	background-color: transparent;
+	color: $main-color;
 }
