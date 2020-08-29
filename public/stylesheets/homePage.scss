@@ -1,0 +1,18 @@
+@import "base";
+
+.halfPageContainer {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	top: 0%;
+}
+
+#leftContainer {
+	left: 0%;
+	background-color: $sec-color;
+}
+
+#rightContainer {
+	left: 50%;
+	background-color: $bg-dark-color;
+}
