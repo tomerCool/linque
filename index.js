@@ -16,8 +16,18 @@ Object.freeze(params);
 
 app.use(express.json());
 
-// Get main page
+// Static content
 app.use(express.static(__dirname + '/public'));
+
+// Get main page
+app.get('/', (_, res) => {
+	res.sendFile(path.join(__dirname, 'public/pages/homePage.html'));
+});
+
+// GET Sign Up page
+app.get('/signup', (_, res) => {
+	res.sendFile(path.join(__dirname, 'public/pages/signup.html'));
+});
 
 // Listen on port
 app.listen(params.port, () => {

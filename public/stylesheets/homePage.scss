@@ -1,4 +1,4 @@
-@import "base";
+@import "variables";
 
 html, body {
 	overflow: hidden;
@@ -34,7 +34,7 @@ html, body {
 		background-color: $main-light-color;
 		// clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
 		// animation: spin 360s infinite linear;
-		animation: jiggle 10s infinite linear;
+		animation: jiggle 10s infinite ease-out;
 	}
 
 	@keyframes jiggle {
@@ -74,9 +74,5 @@ html, body {
 		top: 50%;
 		width: 40%;
 		transform: translate(-50%, -50%);
-
-		a {
-			text-decoration: none;
-		}
 	}
 }

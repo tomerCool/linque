@@ -1,0 +1,96 @@
+*:focus {
+  box-shadow: -5px 0px 0px #ea638c;
+  outline: none;
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
+}
+
+html, body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #FFFCF2;
+  font-family: "Roboto", "Helvetica", "Arial";
+}
+
+p, label {
+  color: #FFFCF2;
+  font-family: "Roboto", "Helvetica", "Arial";
+}
+
+a {
+  text-decoration: none;
+}
+
+.divider {
+  width: 100%;
+  height: 0;
+  margin: 20px 0 20px 0;
+  border-bottom: 1px solid #ea638c;
+}
+
+.button {
+  width: 100%;
+  height: 50px;
+  background-color: #ea638c;
+  margin-bottom: 20px;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: #FFFCF2;
+  font-family: "Roboto", "Helvetica", "Arial";
+  font-weight: 600;
+  font-size: 25px;
+  transition-duration: 0.3s;
+  user-select: none;
+}
+.button:hover {
+  filter: brightness(0.9);
+}
+
+.outlineButton {
+  border: 1px solid #ea638c !important;
+  background-color: transparent;
+  color: #ea638c;
+}
+
+.inputContainer {
+  width: 100%;
+  border: 1px solid #ea638c;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: 15px;
+  box-shadow: 5px 5px 0 #ea638c;
+}
+.inputContainer label {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  color: #ea638c;
+  user-select: none;
+}
+.inputContainer input[type=text], .inputContainer input[type=password] {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ea638c;
+  margin-top: 10px;
+  color: #FFFCF2;
+  font-size: 25px;
+  font-family: "Roboto", "Helvetica", "Arial";
+  transition-property: padding, width;
+  transition-duration: 0.3s;
+}
+.inputContainer input[type=text]:focus, .inputContainer input[type=password]:focus {
+  padding-left: 10px;
+  width: calc(100% - 10px);
+}
+
+#signup {
+  position: relative;
+  left: 25%;
+  width: 50%;
+}

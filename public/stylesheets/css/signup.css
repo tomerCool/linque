@@ -1,0 +1,11 @@
+html, body {
+  background-color: #03012c;
+}
+
+#mainContainer {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  width: 500px;
+  transform: translateX(-50%);
+}

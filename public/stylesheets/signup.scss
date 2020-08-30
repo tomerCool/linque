@@ -1,0 +1,13 @@
+@import "variables";
+
+html, body {
+	background-color: $bg-dark-color;
+}
+
+#mainContainer {
+	position: absolute;
+	left: 50%;
+	top: 30px;
+	width: 500px;
+	transform: translateX(-50%);
+}
