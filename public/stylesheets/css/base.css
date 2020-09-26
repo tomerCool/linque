@@ -72,7 +72,7 @@ a {
   color: #ea638c;
   user-select: none;
 }
-.inputContainer input[type=text], .inputContainer input[type=password] {
+.inputContainer input[type=text], .inputContainer input[type=password], .inputContainer input[type=email] {
   width: 100%;
   background-color: transparent;
   border: none;
@@ -84,7 +84,7 @@ a {
   transition-property: padding, width;
   transition-duration: 0.3s;
 }
-.inputContainer input[type=text]:focus, .inputContainer input[type=password]:focus {
+.inputContainer input[type=text]:focus, .inputContainer input[type=password]:focus, .inputContainer input[type=email]:focus {
   padding-left: 10px;
   width: calc(100% - 10px);
 }
