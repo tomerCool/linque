@@ -9,3 +9,10 @@ html, body {
   width: 500px;
   transform: translateX(-50%);
 }
+#mainContainer .inputErrorsContainer .inputError {
+  margin: 0px;
+  color: #FF0000;
+}
+#mainContainer .inputErrorsContainer .inputError:first-child {
+  margin-top: 10px;
+}

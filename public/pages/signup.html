@@ -14,28 +14,35 @@
 </head>
 <body>
     <div id="mainContainer">
-        <a href=""><div class="button">Continue with Google</div></a>
-        <a href=""><div class="button">Continue with Twitter</div></a>
+        <div class="button">Continue with Google</div>
+        <div class="button">Continue with Twitter</div>
         <div class="divider"></div>
-        <form action="">
+        <form>
             <div class="inputContainer">
-                <label for="fname">Username</label>
-                <input type="text" name="fname" value="">
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username" value="">
+                <div class="inputErrorsContainer"></div>
             </div>
             <div class="inputContainer">
-                <label for="lname">Name</label>
-                <input type="text" name="lname" value="">
+                <label for="displayName">Name</label>
+                <input id="displayName" type="text" name="displayName" value="">
+                <div class="inputErrorsContainer"></div>
             </div>
             <div class="inputContainer">
-                <label for="lname">Email</label>
-                <input type="email" name="lname" value="">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" value="">
+                <div class="inputErrorsContainer"></div>
             </div>
             <div class="inputContainer">
-                <label for="lname">Password</label>
-                <input type="password" name="lname" value="">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" value="">
+                <div class="inputErrorsContainer"></div>
             </div>
-            <a href=""><div id="signup" class="button">Sign Up</div></a>
+            <div id="signupButton" class="button">Sign Up</div>
         </form>
     </div>
+
+    <script src="scripts/util.js"></script>
+    <script src="scripts/signup.js"></script>
 </body>
 </html>

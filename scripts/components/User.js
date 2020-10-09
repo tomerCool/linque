@@ -78,36 +78,40 @@ const User = {
 	},
 	validateSignupData: [
 		validator.check('username')
+			.notEmpty().withMessage('* Required').bail()
 			.isLength({
 				min: userParams.username.min,
 				max: userParams.username.max
-			}).withMessage(`Username must be between ${userParams.username.min} and ${userParams.username.max} characters long`)
-			.not().matches(/[^A-Za-z0-9-_]/g).withMessage('Username must contain only A-Z, a-z, 0-9, -, _')
+			}).withMessage(`Must be between ${userParams.username.min} and ${userParams.username.max} characters long`)
+			.not().matches(/[^A-Za-z0-9-_]/g).withMessage('Must contain only A-Z, a-z, 0-9, -, _')
 			.custom(username => {
 				return User.find.byUsername(username).then(user => {
-					if (user) return Promise.reject('Username already taken');
+					if (user) return Promise.reject('Already taken');
 				});
 			}),
 
 		validator.check('password')
+			.notEmpty().withMessage('* Required').bail()
 			.isLength({
 				min: userParams.password.min,
 				max: userParams.password.max
-			}).withMessage(`Password must be between ${userParams.password.min} and ${userParams.password.max} characters long`),
+			}).withMessage(`Must be between ${userParams.password.min} and ${userParams.password.max} characters long`),
 
 		validator.check('email')
+			.notEmpty().withMessage('* Required').bail()
 			.isEmail().withMessage('Invalid email address')
 			.custom(email => {
 				return User.find.byEmail(email).then(user => {
-					if (user) return Promise.reject('Email already in use');
+					if (user) return Promise.reject('Already in use');
 				});
 			}),
 
 		validator.check('displayName')
+			.notEmpty().withMessage('* Required').bail()
 			.isLength({
 				min: userParams.displayName.min,
 				max: userParams.displayName.max
-			}).withMessage(`Username must be between ${userParams.displayName.min} and ${userParams.displayName.max} characters long`)
+			}).withMessage(`Must be between ${userParams.displayName.min} and ${userParams.displayName.max} characters long`)
 			.not().matches(/[^A-Za-z0-9 ]/g).withMessage('Display name must contain only A-Z, a-z, 0-9'),
 	]
 }

@@ -10,4 +10,16 @@ html, body {
 	top: 30px;
 	width: 500px;
 	transform: translateX(-50%);
+
+	.inputErrorsContainer {
+
+		.inputError {
+			margin: 0px;
+			color: #FF0000;
+
+			&:first-child {
+				margin-top: 10px;
+			}
+		}
+	}
 }

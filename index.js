@@ -25,15 +25,15 @@ app.use(express.static(__dirname + '/public'));
 
 // GET main page
 app.get('/', (_, res) => {
-	res.sendFile(path.join(__dirname, 'public/pages/homePage.html'));
+	res.sendFile(path.join(__dirname, 'public/pages/home.html'));
 });
 
-// GET Sign Up page
+// GET signup page
 app.get('/signup', (_, res) => {
 	res.sendFile(path.join(__dirname, 'public/pages/signup.html'));
 });
 
-// POST Sign Up
+// POST signup
 app.post('/signup', User.validateSignupData,
 	async (req, res, next) => {
 		const errors = validator.validationResult(req).array();
@@ -56,6 +56,12 @@ app.post('/signup', User.validateSignupData,
 	User.login
 );
 
+// GET login page
+app.get('/login', (_, res) => {
+	res.sendFile(path.join(__dirname, 'public/pages/login.html'));
+});
+
+// POST login
 app.post('/login', User.login);
 
 // Error handling
