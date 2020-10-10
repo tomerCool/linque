@@ -25,10 +25,26 @@
         <div id="authContainer">
             <a href=""><div class="button">Login with Google</div></a>
             <a href=""><div class="button">Login with Twitter</div></a>
-            <a href=""><div class="button">Login with Email</div></a>
+            <div id="emailLoginContainer">
+                <form>
+                    <div class="inputContainerSimple">
+                        <label for="username">Username</label>
+                        <input id="username" type="text" name="username" value="">
+                    </div>
+                    <div class="inputContainerSimple">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" name="password" value="">
+                    </div>
+                </form>
+            </div>
+            <div id="emailLoginButton" class="button">Login with Email</div>
             <div class="divider"></div>
             <a href="/signup"><div class="button outlineButton">Create an Account</div></a>
         </div>
     </div>
+
+    <!-- SCRIPTS -->
+    <script src="scripts/components/Util.js"></script>
+    <script src="scripts/login.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 *:focus {
-  box-shadow: -5px 0px 0px #ea638c;
+  box-shadow: -5px 0.5px 0px -0.5px #ea638c;
   outline: none;
   transition-property: box-shadow;
   transition-duration: 0.3s;
@@ -37,7 +37,7 @@ a {
   height: 50px;
   background-color: #ea638c;
   margin-bottom: 20px;
-  border-radius: 50px;
+  border-radius: 25px;
   text-align: center;
   line-height: 50px;
   color: #FFFCF2;
@@ -58,7 +58,7 @@ a {
   color: #ea638c;
 }
 
-.inputContainer {
+.inputContainer, .inputContainerSimple {
   width: 100%;
   border: 1px solid #ea638c;
   margin-bottom: 20px;
@@ -66,14 +66,14 @@ a {
   padding: 15px;
   box-shadow: 5px 5px 0 #ea638c;
 }
-.inputContainer label {
+.inputContainer label, .inputContainerSimple label {
   position: relative;
   width: 100%;
   margin: 0;
   color: #ea638c;
   user-select: none;
 }
-.inputContainer input[type=text], .inputContainer input[type=password], .inputContainer input[type=email] {
+.inputContainer input[type=text], .inputContainerSimple input[type=text], .inputContainer input[type=password], .inputContainerSimple input[type=password], .inputContainer input[type=email], .inputContainerSimple input[type=email] {
   width: 100%;
   background-color: transparent;
   border: none;
@@ -85,13 +85,79 @@ a {
   transition-property: padding, width;
   transition-duration: 0.3s;
 }
-.inputContainer input[type=text]:focus, .inputContainer input[type=password]:focus, .inputContainer input[type=email]:focus {
+.inputContainer input[type=text]:focus, .inputContainerSimple input[type=text]:focus, .inputContainer input[type=password]:focus, .inputContainerSimple input[type=password]:focus, .inputContainer input[type=email]:focus, .inputContainerSimple input[type=email]:focus {
   padding-left: 10px;
   width: calc(100% - 10px);
+}
+
+.inputContainerSimple {
+  border: none;
+  box-shadow: none;
+}
+
+.inputError {
+  margin: 0px;
+  color: #FF0000;
+}
+.inputError:first-child {
+  margin-top: 10px;
 }
 
 #signup {
   position: relative;
   left: 25%;
   width: 50%;
+}
+
+@keyframes shakeX {
+  0% {
+    transform: translateX(1%);
+  }
+  20% {
+    transform: translateX(-2%);
+  }
+  40% {
+    transform: translateX(3%);
+  }
+  60% {
+    transform: translateX(-2%);
+  }
+  80% {
+    transform: translateX(1%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.shakeX {
+  animation: 0.5s shakeX 1;
+}
+
+@keyframes hoverY {
+  0% {
+    transform: translateY(-5%);
+  }
+  50% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(-5%);
+  }
+}
+.hoverY, .loadingDots {
+  animation: 0.5s hoverY infinite;
+}
+
+.loadingDots {
+  font-size: 50px;
+  margin-right: 5px;
+  transform: translateY(-5%);
+  transition-timing-function: cubic-bezier(0.35, 0, 0, 1.65);
+}
+.loadingDots:nth-child(2) {
+  animation-delay: -0.45s;
+}
+.loadingDots:nth-child(3) {
+  animation-delay: -0.9s;
+  margin-right: 0px;
 }

@@ -1,20 +1,20 @@
-const jwtUtil = {
+const JWTUtil = {
 	name: 'jwt',
 	get: () => {
-		let jwt = localStorage.getItem(jwtUtil.name);
+		let jwt = localStorage.getItem(JWTUtil.name);
 		return jwt ? jwt : '';
 	},
 	set: (token) => {
-		localStorage.setItem(jwtUtil.name, token);
+		localStorage.setItem(JWTUtil.name, token);
 	}
 }
 
-const util = {
+const Util = {
 	post: async (url, data) => {
 		return await fetch(url, {
 			method: 'POST',
 			headers: {
-				'Authorization': `Bearer ${jwtUtil.get()}`,
+				'Authorization': `Bearer ${JWTUtil.get()}`,
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(data)
@@ -24,7 +24,7 @@ const util = {
 		return await fetch(url, {
 			method: 'GET',
 			headers: {
-				'Authorization': `Bearer ${jwtUtil.get()}`
+				'Authorization': `Bearer ${JWTUtil.get()}`
 			}
 		});
 	}

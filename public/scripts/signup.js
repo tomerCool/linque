@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Onclick signup button
     dom.signupButton.onclick = async () => {
-        const res = await util.post('/signup', {
+        const res = await Util.post('/signup', {
             username: dom.fields.username.value,
             displayName: dom.fields.displayName.value,
             email: dom.fields.email.value,
@@ -45,11 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         removeAllErrors(dom.fields);
 
         if (res.ok) {
-            jwtUtil.set(json.token);
+            JWTUtil.set(json.token);
             window.location.replace('/');
         } else {
             const errors = json.inputErrors;
-            console.log(errors);
             errors.forEach(err => {
                 displayError(document.querySelector(`#${err.param}`), err.msg);
             });
