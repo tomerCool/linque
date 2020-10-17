@@ -1,8 +1,17 @@
+* {
+  font-family: "Roboto", "Helvetica", "Arial";
+}
+
 *:focus {
   box-shadow: -5px 0.5px 0px -0.5px #ea638c;
   outline: none;
   transition-property: box-shadow;
   transition-duration: 0.3s;
+}
+
+/* Width */
+::-webkit-scrollbar {
+  width: 12px;
 }
 
 html, body {
@@ -32,12 +41,18 @@ a {
   border-bottom: 1px solid #ea638c;
 }
 
+.halfPageContainer {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0%;
+}
+
 .button {
   width: 100%;
   height: 50px;
   background-color: #ea638c;
   margin-bottom: 20px;
-  border-radius: 25px;
   text-align: center;
   line-height: 50px;
   color: #FFFCF2;
@@ -50,6 +65,9 @@ a {
 }
 .button:hover {
   filter: brightness(0.9);
+}
+.button:active {
+  transform: scale(1.05, 0.95);
 }
 
 .outlineButton {
@@ -88,6 +106,7 @@ a {
 .inputContainer input[type=text]:focus, .inputContainerSimple input[type=text]:focus, .inputContainer input[type=password]:focus, .inputContainerSimple input[type=password]:focus, .inputContainer input[type=email]:focus, .inputContainerSimple input[type=email]:focus {
   padding-left: 10px;
   width: calc(100% - 10px);
+  background-color: transparent !important;
 }
 
 .inputContainerSimple {

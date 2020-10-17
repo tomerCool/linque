@@ -1,0 +1,120 @@
+/* Track */
+::-webkit-scrollbar-track {
+  background: #03012c;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ea638c;
+}
+
+#leftContainer {
+  left: 0%;
+  background-color: #03012c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#leftContainer #shareContainer {
+  width: 90%;
+}
+#leftContainer #shareContainer input[type=text] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 30px;
+  border: 1px solid #ea638c;
+  background-color: transparent !important;
+  color: #FFFCF2 !important;
+  box-shadow: 5px 5px 0 #ea638c;
+}
+#leftContainer #shareContainer #friendsContainer {
+  height: 600px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  overflow-y: auto;
+  border-right: none;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer {
+  cursor: pointer !important;
+  user-select: none !important;
+  transition-duration: 0.3s;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer:hover .checkmark {
+  stroke: #ea638c;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer.selected .checkmark {
+  stroke: transparent !important;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer.selected .checkmark circle {
+  fill: #100d43;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer.selected .checkmark polygon {
+  fill: #ea638c;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer.selected .flexContainer {
+  background-color: #ea638c;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer.selected .flexContainer .friendDisplayName {
+  color: #100d43;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer.selected .flexContainer .friendUsername {
+  color: #03012c;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer .checkmark {
+  transition-duration: 0.3s;
+  flex: 0 0 25px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin: 10px 0 0 10px;
+  fill: transparent;
+  stroke-width: 1.5;
+  stroke: transparent;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer .flexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer .flexContainer .friendAvatar {
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer .flexContainer p {
+  margin: 0px;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer .flexContainer .friendDisplayName {
+  font-size: 18px;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+#leftContainer #shareContainer #friendsContainer .friendContainer .flexContainer .friendUsername {
+  color: #CCC5B9;
+}
+
+#rightContainer {
+  left: 50%;
+  background-color: #ea638c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#rightContainer #myQueueButton {
+  width: auto;
+  margin: 0px;
+  padding: 0 20px 0 20px;
+  transform: scale(3);
+  border-radius: 0;
+  background-color: #03012c;
+  color: #ea638c;
+}
+#rightContainer #myQueueButton:active {
+  transform: scale(3.05, 2.95);
+}

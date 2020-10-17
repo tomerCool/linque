@@ -4,13 +4,6 @@ html, body {
 	overflow: hidden;
 }
 
-.halfPageContainer {
-	position: absolute;
-	width: 50%;
-	height: 100%;
-	top: 0%;
-}
-
 #leftContainer {
 	left: 0%;
 	background-color: $main-color;
@@ -31,7 +24,7 @@ html, body {
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%) rotateZ(10deg);
-		background-color: $main-light-color;
+		background-color: $main-dark-color;
 		// clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
 		// animation: spin 360s infinite linear;
 		animation: jiggle 10s infinite ease-out;
@@ -76,6 +69,7 @@ html, body {
 		transform: translate(-50%, -50%);
 
 		#emailLoginButton {
+			margin-top: -2px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -97,8 +91,10 @@ html, body {
 			transition-property: height;
 			
 			border: 1px solid $main-color;
-			border-top-left-radius: 25px;
-			border-top-right-radius: 25px;
+			@if $round-border {
+				border-top-left-radius: 25px;
+				border-top-right-radius: 25px;
+			}
 			box-sizing: border-box;
 		}
 
