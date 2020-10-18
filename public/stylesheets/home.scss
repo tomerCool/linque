@@ -27,7 +27,7 @@
             width: 100%;
             padding: 10px;
             box-sizing: border-box;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             
             font-size: 30px;
             border: 1px solid $main-color;
@@ -37,8 +37,12 @@
         }
 
         #friendsContainer {
+            $anim-dur: .1s;
+            $checkmark-size: 25px;
+            
             height: 600px;
             margin: auto;
+            margin-bottom: 25px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-auto-rows: 200px;
@@ -50,17 +54,19 @@
                 cursor: pointer !important;
                 user-select: none !important;
 
-                transition-duration: .3s;
+                transition-duration: $anim-dur;
 
                 &:hover {
                     .checkmark {
                         stroke: $main-color;
+                        transform: scale(1);
                     }
                 }
 
                 &.selected {
                     .checkmark {
                         stroke: transparent !important;
+                        transform: scale(1);
                         
                         circle {
                             fill: $bg-color;
@@ -85,12 +91,14 @@
                 }
 
                 .checkmark {
-                    transition-duration: .3s;
-                    flex: 0 0 25px;
-                    position: absolute;
-                    width: 25px;
-                    height: 25px;
+                    z-index: 10;
+                    position: relative;
+                    width: $checkmark-size;
+                    height: $checkmark-size;
                     margin: 10px 0 0 10px;
+                    
+                    transition-duration: .3s;
+                    transform: scale(0.8);
 
                     fill: transparent;
                     stroke-width: 1.5;
@@ -98,11 +106,15 @@
                 }
 
                 .flexContainer {
+                    transition-duration: $anim-dur;
+                    position: relative;
+                    top: -$checkmark-size - 15px;
+                    height: 100%;
+
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
-                    height: 100%;
 
                     .friendAvatar {
                         height: 100px;
@@ -124,6 +136,18 @@
                         color: $text-dark-color;
                     }
                 }
+            }
+        }
+
+        #sendButton {
+            width: 200px;
+            min-width: 200px;
+            margin: auto;
+
+            svg {
+                display: inline-block;
+                fill: $text-color;
+                transform: scale(0.8) translateY(6px);
             }
         }
     }

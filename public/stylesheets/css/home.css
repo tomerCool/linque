@@ -22,7 +22,7 @@
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 30px;
   border: 1px solid #ea638c;
   background-color: transparent !important;
@@ -32,6 +32,7 @@
 #leftContainer #shareContainer #friendsContainer {
   height: 600px;
   margin: auto;
+  margin-bottom: 25px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 200px;
@@ -41,13 +42,15 @@
 #leftContainer #shareContainer #friendsContainer .friendContainer {
   cursor: pointer !important;
   user-select: none !important;
-  transition-duration: 0.3s;
+  transition-duration: 0.1s;
 }
 #leftContainer #shareContainer #friendsContainer .friendContainer:hover .checkmark {
   stroke: #ea638c;
+  transform: scale(1);
 }
 #leftContainer #shareContainer #friendsContainer .friendContainer.selected .checkmark {
   stroke: transparent !important;
+  transform: scale(1);
 }
 #leftContainer #shareContainer #friendsContainer .friendContainer.selected .checkmark circle {
   fill: #100d43;
@@ -65,22 +68,26 @@
   color: #03012c;
 }
 #leftContainer #shareContainer #friendsContainer .friendContainer .checkmark {
-  transition-duration: 0.3s;
-  flex: 0 0 25px;
-  position: absolute;
+  z-index: 10;
+  position: relative;
   width: 25px;
   height: 25px;
   margin: 10px 0 0 10px;
+  transition-duration: 0.3s;
+  transform: scale(0.8);
   fill: transparent;
   stroke-width: 1.5;
   stroke: transparent;
 }
 #leftContainer #shareContainer #friendsContainer .friendContainer .flexContainer {
+  transition-duration: 0.1s;
+  position: relative;
+  top: -40px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 #leftContainer #shareContainer #friendsContainer .friendContainer .flexContainer .friendAvatar {
   height: 100px;
@@ -97,6 +104,16 @@
 }
 #leftContainer #shareContainer #friendsContainer .friendContainer .flexContainer .friendUsername {
   color: #CCC5B9;
+}
+#leftContainer #shareContainer #sendButton {
+  width: 200px;
+  min-width: 200px;
+  margin: auto;
+}
+#leftContainer #shareContainer #sendButton svg {
+  display: inline-block;
+  fill: #FFFCF2;
+  transform: scale(0.8) translateY(6px);
 }
 
 #rightContainer {
