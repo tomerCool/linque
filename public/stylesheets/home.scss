@@ -13,6 +13,30 @@
     }
 }
 
+#iconButtonsContainer {
+    $height: 50px;
+    
+    z-index: 100;
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    height: $height;
+
+    user-select: none;
+
+    .iconButton {
+        display: inline-block;
+        line-height: $height;
+        font-size: $height;
+        width: $height;
+        margin-right: 10px;
+
+        cursor: pointer;
+        user-select: none;
+        color: white;
+    }
+}
+
 .halfPageContainer {
     $size: 55%;
     width: 100% - $size;
