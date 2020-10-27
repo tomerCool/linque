@@ -8,6 +8,14 @@
   background: #ea638c;
 }
 
+.halfPageContainer {
+  width: 45%;
+  transition-duration: 0.5s;
+}
+.halfPageContainer.expendedContainer {
+  width: 55%;
+}
+
 #leftContainer {
   left: 0%;
   background-color: #03012c;
@@ -17,6 +25,7 @@
 }
 #leftContainer #shareContainer {
   width: 90%;
+  max-width: 800px;
 }
 #leftContainer #shareContainer input[type=text] {
   width: 100%;
@@ -24,10 +33,13 @@
   box-sizing: border-box;
   margin-bottom: 25px;
   font-size: 30px;
-  border: 1px solid #ea638c;
   background-color: transparent !important;
   color: #FFFCF2 !important;
-  box-shadow: 5px 5px 0 #ea638c;
+  border: none !important;
+  border-bottom: 1px solid #ea638c !important;
+}
+#leftContainer #shareContainer input[type=text]::placeholder {
+  color: #aaa;
 }
 #leftContainer #shareContainer #friendsContainer {
   height: 600px;
@@ -105,19 +117,24 @@
 #leftContainer #shareContainer #friendsContainer .friendContainer .flexContainer .friendUsername {
   color: #CCC5B9;
 }
-#leftContainer #shareContainer #sendButton {
-  width: 200px;
-  min-width: 200px;
-  margin: auto;
+#leftContainer #sendButton {
+  position: absolute;
+  bottom: 60px;
+  width: 160px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  color: #03012c;
 }
-#leftContainer #shareContainer #sendButton svg {
-  display: inline-block;
-  fill: #FFFCF2;
-  transform: scale(0.8) translateY(6px);
+#leftContainer #sendButton svg {
+  fill: #03012c;
+  margin-left: 5px;
 }
 
 #rightContainer {
-  left: 50%;
+  right: 0%;
   background-color: #ea638c;
   display: flex;
   align-items: center;

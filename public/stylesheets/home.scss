@@ -13,6 +13,17 @@
     }
 }
 
+.halfPageContainer {
+    $size: 55%;
+    width: 100% - $size;
+
+    transition-duration: .5s;
+
+    &.expendedContainer {
+        width: $size;
+    }
+}
+
 #leftContainer {
 	left: 0%;
     background-color: $bg-dark-color;
@@ -22,6 +33,7 @@
 
     #shareContainer {
         width: 90%;
+        max-width: 800px;
 
         input[type=text] {
             width: 100%;
@@ -30,10 +42,20 @@
             margin-bottom: 25px;
             
             font-size: 30px;
-            border: 1px solid $main-color;
+            // border: 1px solid $main-color;
+            // background-color: transparent !important;
+            // color: $text-color !important;
+            // box-shadow: 5px 5px 0 $main-dark-color;
+            
             background-color: transparent !important;
             color: $text-color !important;
-            box-shadow: 5px 5px 0 $main-color;
+            border: none !important;
+            border-bottom: 1px solid $main-color !important;
+            // border-top: 1px solid $main-color !important;
+
+            &::placeholder {
+                color: #aaa;
+            }
         }
 
         #friendsContainer {
@@ -138,23 +160,31 @@
                 }
             }
         }
+    }
 
-        #sendButton {
-            width: 200px;
-            min-width: 200px;
-            margin: auto;
+    #sendButton {
+        position: absolute;
+        bottom: 60px;
+        width: 160px;
+        height: 60px;
 
-            svg {
-                display: inline-block;
-                fill: $text-color;
-                transform: scale(0.8) translateY(6px);
-            }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px;
+
+        color: $bg-dark-color;
+
+        svg {
+            fill: $bg-dark-color;
+            margin-left: 5px;
+            // transform: scale(0.8);
         }
     }
 }
 
 #rightContainer {
-	left: 50%;
+	right: 0%;
     background-color: $main-color;
     display: flex;
     align-items: center;

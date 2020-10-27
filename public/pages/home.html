@@ -16,9 +16,11 @@
     <link href="stylesheets/css/home.css" rel="stylesheet">
 </head>
 <body>
-    <div id="leftContainer" class="halfPageContainer">
+    <div id="leftContainer" class="halfPageContainer expendedContainer">
         <div id="shareContainer">
-            <input id="username" type="text" autocomplete="off" name="username" value="">
+            <div id="inputContainer">
+                <input id="url" placeholder="http://" type="text" autocomplete="off" name="url" value="">
+            </div>
             <div id="friendsContainer">
                 <div class="friendContainer">
                     <svg class="checkmark" width="20px" height="20px" viewBox="-2 -2 54 54">
@@ -186,10 +188,11 @@
                     </div>
                 </div>
             </div>
-            <div id="sendButton" class="button">SEND<svg width="47.67px" height="29.43px" viewBox="0 0 47.67 29.43">
-                    <path d="M0,6.3l7.68,8.47l28.3-10.44L9.72,19.83l1.44,6.83l4.2-3.02l5.66,5.79L47.67,0L0,6.3z"/>
-                </svg>
-            </div>
+        </div>
+        <div id="sendButton" class="button">SEND
+            <svg width="47.67px" height="29.43px" viewBox="0 0 47.67 29.43">
+                <path d="M0,6.3l7.68,8.47l28.3-10.44L9.72,19.83l1.44,6.83l4.2-3.02l5.66,5.79L47.67,0L0,6.3z"/>
+            </svg>
         </div>
     </div>
     <div id="rightContainer" class="halfPageContainer">
