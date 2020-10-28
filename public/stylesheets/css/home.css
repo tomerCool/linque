@@ -43,8 +43,7 @@
   justify-content: center;
 }
 #leftContainer #shareContainer {
-  width: 90%;
-  max-width: 800px;
+  width: 800px;
 }
 #leftContainer #shareContainer input[type=text] {
   width: 100%;
