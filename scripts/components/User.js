@@ -38,7 +38,9 @@ const User = {
 		const user = await User.find.byUsername(req.body.username);
 
 		if (user && await bcrypt.compare(req.body.password, user.password)) {
-			jwt.sign({username: user.username}, userParams.jwt.secretKey, { expiresIn: userParams.jwt.expiresIn }, (err, token) => {
+			jwt.sign({
+				username: user.username
+			}, userParams.jwt.secretKey, { expiresIn: userParams.jwt.expiresIn }, (err, token) => {
 				if (err) return next({
 					stack: err,
 					status: 500,
@@ -58,7 +60,24 @@ const User = {
 		}
 	},
 	verifyToken: (req, res, next) => {
-
+		const bearerHeader = req.headers['authorization'];
+		if (!bearerHeader || bearerHeader.split(' ').length < 2) res.status(403).json({
+			inputErrors: [{
+				msg: 'User not logged in'
+			}]
+		});
+	
+		const bearerToken = bearerHeader.split(' ')[1];
+	
+		jwt.verify(bearerToken, userParams.jwt.secretKey, (err, authData) => {
+			if (err) res.status(403).json({
+				inputErrors: [{
+					msg: 'Invalid JWT'
+				}]
+			});
+			req.user = authData.username;
+			next();
+		});
 	},
 	find: {
 		byUsername: async (username) => {

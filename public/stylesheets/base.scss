@@ -149,10 +149,79 @@ $button-margin: 20px;
 	}
 }
 
-#signup {
-	position: relative;
-	left: 25%;
-	width: 50%;
+// * {border: 1px solid red;}
+
+.linkPreviewContainer {
+	$height: 140px;
+
+	width: 100%;
+	height: $height;
+	margin-bottom: 15px;
+
+	display: flex;
+
+	border: 1px solid $main-color;
+
+	cursor: pointer;
+	
+	* {
+		user-select: none;
+	}
+
+	.linkImg {
+		width: $height;
+		height: 100%;
+		border-right: 1px solid $main-color;
+
+		background-size: cover;
+		background-position: center;
+	}
+
+	.linkInfoContainer {
+		width: calc(100% - #{$height});
+		height: 100%;
+
+		padding: 12px;
+		box-sizing: border-box;
+
+		* {
+			margin: 0px;
+			overflow: hidden;
+		}
+
+		.linkTitle {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.linkDescription {
+			$line-height: 20px;
+			height: $line-height * 2;
+			line-height: $line-height;
+			margin-bottom: 16px;
+
+			font-size: 15px;
+			color: $text-dark-color;
+			font-weight: lighter;
+		}
+
+		.linkUrl {
+			display: flex;
+			
+			span {
+				padding: 0px;
+				font-size: 16px;
+				text-transform: uppercase;
+				font-weight: bold;
+				color: $text-dark-color;
+			}
+
+			img {
+				height: 20px;
+				margin-right: 5px;
+			}
+		}
+	}
 }
 
 //// ANIMATION ////

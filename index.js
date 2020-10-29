@@ -8,6 +8,7 @@ const jwt = require('jsonwebtoken');
 const validator = require('express-validator');
 
 const User = require('./scripts/components/User');
+const LinkPreview = require('./scripts/components/LinkPreview');
 
 const app = express();
 
@@ -64,11 +65,30 @@ app.get('/login', (_, res) => {
 // POST login
 app.post('/login', User.login);
 
+// POST link preview
+app.post('/util/linkpreview', /*User.verifyToken,*/ LinkPreview.validateLink, async (req, res, next) => {
+	const errors = validator.validationResult(req).array();
+
+	if (errors.length > 0) {
+		res.status(400).json({
+			inputErrors: errors
+		});
+	} else {
+		const preview = await LinkPreview.getData(req.body.inputUrl);
+		if (preview) res.json(preview);
+		else res.status(400).json({
+			inputErrors: [{
+				msg: 'Invalid URL'
+			}]
+		});
+	}
+});
+
 // Error handling
 app.use((err, req, res, next) => {
 	if (err.stack) console.error(err.stack);
-  res.status(err.status).json({
-		error: err.msg
+  	res.status(err.status || 500).json({
+		error: err.msg || ''
 	});
 });
 
