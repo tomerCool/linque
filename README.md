@@ -1,3 +1,5 @@
+_FYI this readme is more of a todo list for me and less of a readme for now_
+
 # Notes and stuff
 
 ## get metadata
