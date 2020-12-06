@@ -1,4 +1,5 @@
 if (typeof(Storage) !== 'undefined') {
+	// TODO read about HttpOnly Cookie
 	if (!localStorage.getItem('jwt')) window.location.replace('/login');
 } else {
 	// TODO document.write isn't good

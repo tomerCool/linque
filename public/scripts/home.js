@@ -16,23 +16,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Link preview
 	
-	dom.urlInput.oninput = async () => {
+	let prevUrl = '';
+	// dom.urlInput.oninput = async () => {
+	let updateLinkPreview = async () => {
+		let inputUrl = dom.urlInput.value;
+		if (inputUrl == prevUrl) return;
+
+		console.log('Fetching URL metadata');
+		prevUrl = inputUrl;
+
 		const res = await Util.post('/util/linkpreview', {
-			inputUrl: dom.urlInput.value
+			inputUrl
 		});
 		const data = await res.json();
 
 		if (res.ok) {
 			dom.linkPreview.setAttribute('href', data.url);
-			dom.linkPreview.querySelector('.linkImg').style.backgroundImage = `url('${data.img}')`;
-			dom.linkPreview.querySelector('.linkFavicon').setAttribute('src', data.favicon);
+
+			if (data.img != undefined && data.img.length > 0) {
+				dom.linkPreview.querySelector('.linkImg').style.backgroundImage = `url('${data.img}')`;
+				dom.linkPreview.querySelector('.linkImg').classList.remove('hide');
+			} else dom.linkPreview.querySelector('.linkImg').classList.add('hide');
+
+			if (data.favicon != undefined) {
+				dom.linkPreview.querySelector('.linkFavicon').setAttribute('src', data.favicon);
+				dom.linkPreview.querySelector('.linkImg').classList.remove('hide');
+			} else dom.linkPreview.querySelector('.linkImg').classList.add('hide');
+
 			dom.linkPreview.querySelector('.linkTitle').textContent = data.title;
 			dom.linkPreview.querySelector('.linkDescription').textContent = data.description;
 			dom.linkPreview.querySelector('.linkUrl span').textContent = data.domain;
 		} else {
-			console.log('NONONO');
+			console.log('Invalid URL');
 		}
 	}
+
+	setInterval(updateLinkPreview, 700);
 
 	// Halfs resize effect
 

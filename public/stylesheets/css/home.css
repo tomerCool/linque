@@ -8,6 +8,10 @@
   background: #ea638c;
 }
 
+.hide {
+  display: none;
+}
+
 #iconButtonsContainer {
   z-index: 100;
   position: fixed;
