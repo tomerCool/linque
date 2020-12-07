@@ -1,20 +1,5 @@
-_FYI this readme is more of a todo list for me and less of a readme for now_
+_TODO add actual readme_
 
-# Notes and stuff
-
-## get metadata
-```
-if (meta image) meta image
-else favicon
-
-if (meta title) meta title
-else title
-
-if (meta description) meta description
-else nothing
-
-if (meta url)  meta url
-else given url
-
-display -> soundcloud.com
-```
+# Progress Pics
+**06-12-2020**
+![06-12-2020](https://i.imgur.com/InDACeb.gif)
